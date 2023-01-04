@@ -15,4 +15,10 @@ public class Grades {
         this.grades[this.size] = value;
         this.size++;
     }
+    public void lastGrade (int size) {
+
+
+    }
+    public static void main (String [] args ) {
+    }
 }
