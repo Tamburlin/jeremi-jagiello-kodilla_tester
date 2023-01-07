@@ -19,7 +19,7 @@ public class User {
         User jan = new User("Jan", "Pawel", 14, "Pope");
         User adam = new User("Adam", "Nowak", 33, "Baker");
         User john = new User("John", "Doe", 15, "Student");
-        User[] users = {johny, jan, adam};
+        User[] users = {johny, jan, adam, john};
         int usersLength = users.length;
         int result = 0;
         for (int i = 0; i < usersLength; i++) {

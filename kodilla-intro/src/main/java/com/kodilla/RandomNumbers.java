@@ -1,53 +1,42 @@
 package com.kodilla;
 
+import java.util.Random;
+
 public class RandomNumbers {
+    static int min = 30;
+    static int max = 0;
+
     public static void main(String[] args) {
-        randMax();
+        RandomNumbers randomnumbers = new RandomNumbers();
+        randomnumbers.rand();
     }
 
-    public static void rand() {
-        int min = 0;
-        int max = 30;
+    public void rand() {
         int sum = 0;
         int randomN;
         int roof = 5000;
+        Random random = new Random();
         while (sum < roof) {
-            randomN = (int) Math.floor(Math.random() * (max - min + 1) + min);
-            sum = sum + randomN;
+            //  randomN = (int) Math.floor(Math.random() * (max - min + 1) + min);
+            int temp = random.nextInt(31);
+            randMin(temp);
+            randMax(temp);
+            System.out.println(temp);
+            sum = sum + temp;
         }
     }
 
-    public static void randMin() {
-        int min = 0;
-        int max = 30;
-        int sum = 0;
-        int randomN;
-        int minimalHelper = 1;
-        int roof = 5000;
-        while (sum < roof) {
-            randomN = (int) Math.floor(Math.random() * (max - min + 1) + min);
-            sum = sum + randomN;
-            if (randomN < minimalHelper) {
-                minimalHelper = randomN;
-            }
+    public int randMin(int number) {
+        if (number < min) {
+            min = number;
         }
-        System.out.println(minimalHelper);
+        return min;
     }
 
-    public static void randMax() {
-        int min = 0;
-        int max = 30;
-        int sum = 0;
-        int randomN;
-        int maxHelper = 1;
-        int roof = 5000;
-        while (sum < roof) {
-            randomN = (int) Math.floor(Math.random() * (max - min + 1) + min);
-            sum = sum + randomN;
-            if (randomN > maxHelper) {
-                maxHelper = randomN;
-            }
+    public int randMax(int number) {
+        if (number > max) {
+            max = number;
         }
-        System.out.println(maxHelper);
+        return max;
     }
 }
