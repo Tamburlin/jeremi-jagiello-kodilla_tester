@@ -2,7 +2,7 @@ package com.kodilla.inheritance.homework;
 
 public class Cogitator extends OperatingSystem {
 
-    public Cogitator(int yearOfProduction){
+    public Cogitator(int yearOfProduction) {
         super(yearOfProduction);
     }
 

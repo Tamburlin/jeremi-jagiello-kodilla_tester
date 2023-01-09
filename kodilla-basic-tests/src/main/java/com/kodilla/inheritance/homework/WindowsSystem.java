@@ -6,7 +6,7 @@ public class WindowsSystem extends OperatingSystem {
         super(yearOfProduction);
     }
 
-    public void company(){
+    public void company() {
         System.out.println("Windows");
     }
 }
