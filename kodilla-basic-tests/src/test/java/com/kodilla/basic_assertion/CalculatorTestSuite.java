@@ -14,8 +14,9 @@ public class CalculatorTestSuite {
         double sumResult = calculator.sum(a, b);
         assertEquals(13, sumResult, 0.0001);
     }
+
     @Test
-            public void  testSquare() {
+    public void testSquare() {
         Calculator calculator = new Calculator();
         double squareResult = calculator.square(9);
         assertEquals(81, squareResult, 0.001);
