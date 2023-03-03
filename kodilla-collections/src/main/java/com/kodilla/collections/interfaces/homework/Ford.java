@@ -1,5 +1,7 @@
 package com.kodilla.collections.interfaces.homework;
 
+import java.util.Objects;
+
 public class Ford implements Car {
 
     private int mass;
@@ -25,5 +27,29 @@ public class Ford implements Car {
 
     public void decreaseSpeed() {
         DccTimer--;
+    }
+
+    @Override
+    public String toString() {
+        return "Ford{" +
+                "mass=" + mass +
+                ", engineForce=" + engineForce +
+                ", brakesForce=" + brakesForce +
+                ", AccTimer=" + AccTimer +
+                ", DccTimer=" + DccTimer +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ford ford = (Ford) o;
+        return mass == ford.mass && engineForce == ford.engineForce && brakesForce == ford.brakesForce && AccTimer == ford.AccTimer && DccTimer == ford.DccTimer;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mass, engineForce, brakesForce, AccTimer, DccTimer);
     }
 }
