@@ -17,16 +17,4 @@ public class FlightRepository {
         return airportFlights;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        FlightRepository that = (FlightRepository) o;
-        return Objects.equals(airportName, that.airportName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(airportName);
-    }
 }

@@ -9,6 +9,8 @@ public class UsersManager {
     public static void main(String[] args) {
         List<String> chemistGroupUsernames = filterChemistGroupUsernames();
         System.out.println(chemistGroupUsernames);
+        List<User> olderUsers = filterUsersOlderThanX(43);
+        System.out.println(olderUsers);
     }
 
     private static List<String> filterChemistGroupUsernames() {
@@ -21,5 +23,12 @@ public class UsersManager {
     }
     public static String getUserName(User user) {
         return user.getUsername();
+    }
+    private static List<User> filterUsersOlderThanX(int age) {
+        List<User> users = UsersRepository.getUserList()
+                .stream()
+                .filter(user -> user.getAge() >= age)
+                .collect(Collectors.toList());
+        return users;
     }
 }

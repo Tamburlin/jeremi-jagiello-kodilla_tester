@@ -14,10 +14,10 @@ public class FlightFinder {
     }
 
     public List<Flight> findFlightsFrom(String departure) {
-        List<Flight> lista = FlightRepository.getFlightTable();
+        List<Flight> listOfFlights = FlightRepository.getFlightTable();
         List<Flight> result = new ArrayList<>();
 
-        for (Flight flight : lista) {
+        for (Flight flight : listOfFlights) {
             if (flight.getDeparture() == departure) {
                 result.add(flight);
             }
@@ -27,19 +27,14 @@ public class FlightFinder {
     }
 
     public List<Flight> findFlightsTo(String arrival) {
-        List<Flight> lista = FlightRepository.getFlightTable();
+        List<Flight> listOfFlights = FlightRepository.getFlightTable();
         List<Flight> result = new ArrayList<>();
-        for (Flight flight : lista) {
+        for (Flight flight : listOfFlights) {
             if (flight.getArrival() == arrival) {
                 result.add(flight);
             }
         }
         System.out.println(result);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "FlightFinder{}";
     }
 }
