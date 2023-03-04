@@ -10,6 +10,7 @@ public class Application {
         this.age = age;
         this.height = height;
     }
+
     public void applicationCheck() {
         if (this.name != null) {
             if (this.age > 30 && this.height > 160) {
@@ -23,5 +24,5 @@ public class Application {
     public static void main(String[] args) {
         Application Mister1 = new Application("Adam", 40.5, 178);
         Mister1.applicationCheck();
-        }
+    }
 }
