@@ -36,4 +36,27 @@ class UsersManagerTest {
         assertEquals(getChemistsList(),usernames );
 
     }
+
+    @Test
+    public void shouldFilterOnlyUsersOlderThan43() { //for example x = 43
+        List<User> users = UsersRepository.getUserList()
+                .stream()
+                .filter(user -> user.getAge() > 43 )
+                .collect(Collectors.toList()); //should collect 4 users - Walter, Gus, Gale and Mike
+        int i =0;
+        for(User user : users) {
+            if(user.getAge() > 43 )
+                i += 1;
+        }
+        assertEquals(4,i);
+    }
+
+    @Test
+    public void shouldFilterOutUsersWithZeroPost() {
+        List<User> users = UsersRepository.getUserList()
+                .stream()
+                .filter(user -> user.getNumberOfPost() > 0)
+                .collect(Collectors.toList()); //should collect 4 users
+        assertEquals(4, users.size());
+    }
 }
