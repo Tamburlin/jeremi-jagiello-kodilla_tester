@@ -4,13 +4,14 @@ public class Application {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        int a = 5;
-        int b = 8;
+        double a = 5;
+        double b = 8;
+
         double sumResult = calculator.sum(a, b);
-        boolean correctSum = ResultChecker.assertEquals(13, sumResult,0.00001);
+        boolean correctSum = ResultChecker.assertEquals(13, sumResult, 0.00001);
         if (correctSum) {
             System.out.println("Metoda sum działa poprawnie dla liczb " + a + " i " + b);
-        }else {
+        } else {
             System.out.println("Metoda sum nie działa poprawnie dla liczb " + a + " i " + b);
         }
 

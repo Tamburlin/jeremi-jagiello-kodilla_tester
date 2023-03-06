@@ -2,15 +2,15 @@ package com.kodilla.basic_assertion;
 
 public class Calculator {
 
-    public double sum(double a, double b){
+    public static double sum(double a, double b){
         return a + b;
     }
 
-    public double subtract(double a, double b) {
+    public static double subtract(double a, double b) {
         return a -b;
     }
 
-    public double square(double a) {
-        return a * a;
+    public static double square(double a) {
+        return Math.pow(a,  2);
     }
 }
