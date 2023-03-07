@@ -10,4 +10,10 @@ public class Order {
     public String getNumber() {
         return orderNumber;
     }
+
+    public String toString() {
+        return "Order{" +
+                "orderNumber='" + orderNumber + '\'' +
+                '}';
+    }
 }

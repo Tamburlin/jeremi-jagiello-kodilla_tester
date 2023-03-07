@@ -8,25 +8,17 @@ import java.util.Set;
 public class Warehouse {
     private List<Order> orders = new ArrayList<>();
 
-    public List<Order> addOrder(Order order) {
+    public void addOrder(Order order) {
         this.orders.add(order);
-        return null;
     }
 
-    Order getOrder(String number) {
-        Order searchedOrder = orders
-                .stream().filter(order -> order.getNumber().equals(number)).findAny().get();
-        return  searchedOrder;
+    public Order getOrder(String number) throws OrderDoesntExistException {
+        Order handy = orders.stream().filter(order -> order.getNumber().equals(number)).findAny().get(); //musiałem urzyć lokalnej zmiennej do przyrównania, contains() nie zadziałała.
+        if (handy.getNumber() == number) return handy;
+        throw new OrderDoesntExistException();
     }
 
     public List<Order> getOrders() {
         return orders;
-    }
-
-    @Override
-    public String toString() {
-        return "Warehouse{" +
-                "orders=" + orders +
-                '}';
     }
 }
