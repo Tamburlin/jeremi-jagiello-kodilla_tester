@@ -1,4 +1,4 @@
-/*package com.kodilla.optional.homework;
+package com.kodilla.optional.homework;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -9,19 +9,21 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+
 class ApplicationTest {
-   private List<Student> students;
-    void initData() {
-        List<Student> students = new ArrayList<>();
-        Teacher magnus = new Teacher("Magnus");
-        Teacher karl = new Teacher("Karl");
-        Student jacob = new Student("Jacob", karl);
-        Student adam = new Student("Adam", null);
-        Student filip = new Student("Filip", magnus);
+    @Test
+    public void shouldAddTeacher() {
+        Teacher teacher1 = new Teacher("1");
+        assertEquals("1", teacher1.getTeacherName());
+    }
+
+    @Test
+    public void shouldAddStudent() {
+        Teacher teacher1 = new Teacher("1");
+        Student nemo = new Student("1", teacher1);
         Student donald = new Student("Donald", null);
-        students.add(jacob);
-        students.add(adam);
-        students.add(filip);
-        students.add(donald);
-    }**/
+        assertEquals("1", nemo.getName());
+        assertEquals("1", nemo.getTeacher().getTeacherName());
+        assertNull(donald.getTeacher());
+    }
+}
