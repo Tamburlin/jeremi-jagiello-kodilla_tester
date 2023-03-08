@@ -16,7 +16,7 @@ public class CashMachine {
         this.meterWithdrawal = 0;
     }
 
-    public void add(double value) {
+    public void addValue(double value) {
         if (value != 0) {
             this.size++;
             double[] newTab = new double[this.size];
@@ -25,7 +25,7 @@ public class CashMachine {
             if (value < 0) {
                 this.account = newTab;
                 this.meterWithdrawal++;
-            } else {
+            } else if (value > 0){
                 this.meterAdd++;
                 this.account = newTab;
             }
@@ -49,6 +49,26 @@ public class CashMachine {
         return sum;
     }
 
+    public double averageAdd() {
+        double averageAdd = 0;
+        for (int i = 0; i < this.meterAdd; i++) {
+            if (this.account[i] > 0) {
+                averageAdd = averageAdd + this.account[i];
+            }
+        }
+        return averageAdd / this.meterAdd;
+    }
+
+    public double averageWithdrawal() {
+        double averageWithdrawal = 0;
+        for (int i = 0; i < this.meterWithdrawal; i++) {
+            if (this.account[i] < 0) {
+                averageWithdrawal = averageWithdrawal + this.account[i];
+            }
+        }
+        return averageWithdrawal / this.meterWithdrawal;
+    }
+
     public int getMeterAdd() {
         return this.meterAdd;
     }
@@ -61,23 +81,4 @@ public class CashMachine {
         return this.meterAdd + this.meterWithdrawal;
     }
 
-    public double averageAdd() {
-        double averageAdd = 0;
-        for (int i = 0; i < this.account.length; i++) {
-            if (this.account[i] > 0) {
-                averageAdd = averageAdd + this.account[i];
-            }
-        }
-        return averageAdd;
-    }
-
-    public double averageWithdrawal() {
-        double averageWithdrawal = 0;
-        for (int i = 0; i < this.account.length; i++) {
-            if (this.account[i] < 0) {
-                averageWithdrawal = averageWithdrawal + this.account[i];
-            }
-        }
-        return averageWithdrawal;
-    }
 }
