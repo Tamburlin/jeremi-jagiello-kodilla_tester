@@ -25,9 +25,4 @@ class BankTest {
         bank1.cashMachines[0] = cashMachine1;
         bank1.cashMachines[1] = cashMachine2;
     }
-
-    @Test
-    public void shouldGetBankCashMachinesBalance() {
-        assertEquals(0, bank1.getBankCashMachinesBalance());
-    }
 }

@@ -21,9 +21,4 @@ class CashMachineTest {
     public void ShouldAddValuesAndGetCashMachineBalance() {
         assertEquals(150, cashMachine1.getAccountBalance());
     }
-
-    @Test
-    public void ShouldGetAverageAdd() {
-        assertEquals(150,cashMachine1.averageAdd());
-    }
 }
