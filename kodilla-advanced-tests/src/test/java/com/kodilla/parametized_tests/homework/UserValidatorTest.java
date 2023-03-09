@@ -8,30 +8,29 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserValidatorTest {
 
-    private  UserValidator validator = new UserValidator();
+    private UserValidator validator = new UserValidator();
 
     @ParameterizedTest
     @ValueSource(strings = {"xXxNoob_Slayer69.-xXx", "Michai_Biaukov3", "III"})
-    public void shouldReturnTrueIfStringInRegex( String username) {
+    public void shouldReturnTrueIfStringInRegex(String username) {
         assertTrue(validator.validateUsername(username));
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"", " ", "::Adolfino", "Adam Miłosz", "łłłł", "Filip Dupa", "II"})
-    public void shouldReturnFalseIfStringNotInRegex( String username) {
+    public void shouldReturnFalseIfStringNotInRegex(String username) {
         assertFalse(validator.validateUsername(username));
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"Adam.malysz@gmail.com.pl", "adam@gmail.com", "adam.malysz@com.pl",""})
+    @ValueSource(strings = {"Adam.malysz@gmail.com.pl", "adam@gmail.com", "adam.malysz@com.pl", ""})
     public void shouldReturnTrueIfStringMatchesRegex(String email) {
         assertTrue(validator.validateEmail(email));
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"Adam@gmailcom", " ", "null","KaczkaDziwaczka.gmail.com"})
+    @ValueSource(strings = {"Adam@gmailcom", " ", "null", "KaczkaDziwaczka.gmail.com"})
     public void shouldReturnFalseIfStringDoesNotMatchesRegex(String email) {
         assertFalse(validator.validateEmail(email));
     }
-
 }
