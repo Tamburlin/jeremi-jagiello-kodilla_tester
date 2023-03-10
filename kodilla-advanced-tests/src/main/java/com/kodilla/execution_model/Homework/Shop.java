@@ -47,21 +47,4 @@ public class Shop {
         }
         return sum;
     }
-
-    public static void main(String[] args) {
-        Shop shop = new Shop();
-        Order order1 = new Order(2137, LocalDate.of(2010, 04, 05), "Michail");
-        shop.addOrder(order1);
-        Order order2 = new Order(100, LocalDate.of(2022, 03, 04), "Filip Kosior");
-        // System.out.println(shop);
-        shop.addOrder(order2);
-        System.out.println(shop.returnOrdersFromLastTwoYears());
-    }
-
-    @Override
-    public String toString() {
-        return "Shop{" +
-                "orders=" + orders +
-                '}';
-    }
 }

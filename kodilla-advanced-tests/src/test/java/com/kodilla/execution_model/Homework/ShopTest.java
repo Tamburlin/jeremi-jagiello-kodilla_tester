@@ -10,8 +10,8 @@ class ShopTest {
     Shop shop = new Shop();
     Order order1 = new Order(2137, LocalDate.of(2010, 04, 05), "Michail");
     Order order2 = new Order(100, LocalDate.of(2022, 03, 04), "Filip Kosior");
-    Order order3 = new Order(2000, LocalDate.of(2137,01,01),"Nemo");
-    Order order4 = new Order(3000, LocalDate.of(1997,04,01), "Xawras Wyzryn");
+    Order order3 = new Order(2000, LocalDate.of(2137, 01, 01), "Nemo");
+    Order order4 = new Order(3000, LocalDate.of(1997, 04, 01), "Xawras Wyzryn");
 
     @Test
     public void shouldAddOrdersToShop() {
@@ -30,10 +30,12 @@ class ShopTest {
         shop.addOrder(order2);
         assertEquals(shop.returnOrdersFromLastTwoYears().size(), 1);
     }
+
     @Test
     public void shouldReturnEmptyListOfOrdersFromLast2Years() {
         assertTrue(shop.returnOrdersFromLastTwoYears().isEmpty());
     }
+
     @Test
     public void shouldReturnOrdersWithPriceInRange() {
         double min = 2000;
@@ -42,14 +44,14 @@ class ShopTest {
         shop.addOrder(order2);
         shop.addOrder(order3);
         shop.addOrder(order4);
-        assertEquals(shop.returnOrdersWithPriceInRange(min,max).size(),2);
+        assertEquals(shop.returnOrdersWithPriceInRange(min, max).size(), 2);
     }
 
     @Test
     public void shouldReturnEmptySetFromMethodOrdersWithPriceInRange() {
         double min = 2000;
         double max = 2500;
-        assertTrue(shop.returnOrdersWithPriceInRange(min,max).isEmpty());
+        assertTrue(shop.returnOrdersWithPriceInRange(min, max).isEmpty());
     }
 
     @Test
@@ -58,7 +60,7 @@ class ShopTest {
         shop.addOrder(order2);
         shop.addOrder(order3);
         shop.addOrder(order4);
-        assertEquals(shop.getNumberOfOrders(),4);
+        assertEquals(shop.getNumberOfOrders(), 4);
     }
 
     @Test

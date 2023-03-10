@@ -26,13 +26,4 @@ public class Order {
     public String getOrdererLogin() {
         return ordererLogin;
     }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderPrice=" + orderPrice +
-                ", orderDate=" + orderDate +
-                ", ordererLogin='" + ordererLogin + '\'' +
-                '}';
-    }
 }
