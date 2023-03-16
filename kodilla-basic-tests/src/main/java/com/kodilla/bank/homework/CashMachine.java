@@ -19,18 +19,16 @@ public class CashMachine {
     public void addValue(double value) {
         if (value != 0) {
             this.size++;
+            if (value > 0) {
+                this.meterAdd++;
+            }
+            if (value < 0) {
+                this.meterWithdrawal++;
+            }
             double[] newTab = new double[this.size];
             System.arraycopy(account, 0, newTab, 0, account.length);
             newTab[this.size - 1] = value;
-            if (value < 0) {
-                this.account = newTab;
-                this.meterWithdrawal++;
-            } else if (value > 0){
-                this.meterAdd++;
-                this.account = newTab;
-            }
-        } else {
-            return;
+            this.account = newTab;
         }
     }
 
@@ -50,18 +48,18 @@ public class CashMachine {
     }
 
     public double averageAdd() {
-        double averageAdd = 0;
-        for (int i = 0; i < this.meterAdd; i++) {
+        double sum = 0;
+        for (int i = 0; i < this.size; i++) {
             if (this.account[i] > 0) {
-                averageAdd = averageAdd + this.account[i];
+                sum = sum + this.account[i];
             }
         }
-        return averageAdd / this.meterAdd;
+        return sum / this.meterAdd;
     }
 
     public double averageWithdrawal() {
         double averageWithdrawal = 0;
-        for (int i = 0; i < this.meterWithdrawal; i++) {
+        for (int i = 0; i < this.size; i++) {
             if (this.account[i] < 0) {
                 averageWithdrawal = averageWithdrawal + this.account[i];
             }
