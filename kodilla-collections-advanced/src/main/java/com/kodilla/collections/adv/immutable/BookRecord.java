@@ -1,4 +1,4 @@
-package com.kodilla.collections.adv.immutable;
+//package com.kodilla.collections.adv.immutable;
 
-public record BookRecord(String author, String title, int year) {
-}
+//public record BookRecord(String author, String title, int year) {
+//}

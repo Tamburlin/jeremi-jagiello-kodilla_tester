@@ -1,5 +1,6 @@
-package com.kodilla.collections.adv.immutable.homework;
+// package com.kodilla.collections.adv.immutable.homework;
 
+/*
 public class TaskApi {
     public static void main(String[] args) {
         TaskVer2 taskVer2 = new TaskVer2("TestVer2", 12);
@@ -13,3 +14,5 @@ public class TaskApi {
 
     }
 }
+
+ */
