@@ -28,4 +28,18 @@ class GamblingMachineTest {
         // then
         assertDoesNotThrow(() -> gamblingMachine.howManyWins(numbers));
     }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/nonValidGamblingMachineNumbers.csv", numLinesToSkip = 0, delimiter = ':')
+    public void shouldThrowException(String stringNumbers) {
+        // given
+        String[] strings = stringNumbers.split(",");
+
+        for (String el : strings) {
+            numbers.add(Integer.valueOf(el));
+        }
+        // when
+        // then
+        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(numbers));
+    }
 }
