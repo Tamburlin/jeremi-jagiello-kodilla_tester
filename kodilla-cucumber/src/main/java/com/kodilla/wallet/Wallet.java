@@ -2,6 +2,7 @@ package com.kodilla.wallet;
 
 public class Wallet {
     private int balance = 0;
+    private String notEnoughMoneyMessage = "You don't have anough money in your wallet.";
 
     public Wallet() {
 
@@ -13,5 +14,8 @@ public class Wallet {
 
     public int getBalance() {
         return balance;
+    }
+    public String getNotEnoughMoneyMessage() {
+        return notEnoughMoneyMessage;
     }
 }
