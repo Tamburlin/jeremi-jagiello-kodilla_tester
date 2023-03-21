@@ -1,5 +1,5 @@
-/* package com.kodilla.rest.controller;
-
+/*
+package com.kodilla.rest.controller;
 import com.kodilla.rest.domain.BookDto;
 import com.kodilla.rest.service.BookService;
 import org.junit.jupiter.api.Test;
@@ -14,37 +14,30 @@ import static org.junit.jupiter.api.Assertions.*;
 class BookControllerTestNoHTTP {
 
     @Test
-    public void shouldFetchBooks() {
-
+    void shouldFetchBooks() {
+        //given
         BookService bookServiceMock = Mockito.mock(BookService.class);
         BookController bookController = new BookController(bookServiceMock);
-        List<BookDto> bookList = new ArrayList<>();
-        bookList.add(new BookDto("Title1", "Author1"));
-        bookList.add(new BookDto("Title2", "Author2"));
-        Mockito.when(bookServiceMock.getBooks()).thenReturn(bookList);
-
+        List<BookDto> booksList = new ArrayList<>();
+        booksList.add(new BookDto("Title 1", "Author 1"));
+        booksList.add(new BookDto("Title 2", "Author 2"));
+        Mockito.when(bookServiceMock.getBooks()).thenReturn(booksList);
+        //when
         List<BookDto> result = bookController.getBooks();
-
+        //then
         assertThat(result).hasSize(2);
     }
 
     @Test
-    void shouldAddBooks() throws Exception {
+            void shouldAddBooks() {
+        //given
         BookService bookServiceMock = Mockito.mock(BookService.class);
         BookController bookController = new BookController(bookServiceMock);
-        BookDto bookDto1 = new BookDto("Title1", "Author1");
         List<BookDto> bookList = new ArrayList<>();
-
-        bookServiceMock.addBook(bookDto1);
-        bookController.addBook(bookDto1);
-        Mockito.when(bookServiceMock.addBook(bookDto1).thenReturn(bookDto1);
-
-        List<BookDto> result = bookController.getBooks();
-
-  assertEquals(result.get(0), bookDto1);
-
-
-
+        bookList.add(new BookDto("Title2", "Author2"));
+        BookDto bookDto1 = new BookDto("Title1", "Author1");
+        Mockito.when(bookServiceMock.addBook(bookDto1)).thenCallRealMethod(bookList.add(new BookDto("Title1", "Author1")));
+        //when
+        BookDto book1 = bookServiceMock.addBook(bookDto1);
     }
-    }
- */
+}*/
