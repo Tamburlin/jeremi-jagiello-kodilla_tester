@@ -17,10 +17,10 @@ class ClockTest {
         Clock secondBean = context.getBean(Clock.class);
         Thread.sleep(500); //need it bc new Clocks are getting time too fast after each other and were equal
         Clock thirdBean = context.getBean(Clock.class);
-        System.out.println(firstBean+ " " + secondBean + " " + thirdBean);
+
+        System.out.println(firstBean + " " + secondBean + " " + thirdBean);
         Assertions.assertNotEquals(firstBean.getTime(), secondBean.getTime());
-        Assertions.assertNotEquals(secondBean.getTime(),thirdBean.getTime());
+        Assertions.assertNotEquals(secondBean.getTime(), thirdBean.getTime());
         Assertions.assertNotEquals(firstBean.getTime(), thirdBean.getTime());
     }
-
 }
