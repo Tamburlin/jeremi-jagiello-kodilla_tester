@@ -11,14 +11,16 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 class ClockTest {
 
     @Test
-    public void shouldCreateDifferentTimes() {
+    public void shouldCreateDifferentTimes() throws InterruptedException {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Clock firstBean = context.getBean(Clock.class);
         Clock secondBean = context.getBean(Clock.class);
+        Thread.sleep(500); //need it bc new Clocks are getting time too fast after each other and were equal
         Clock thirdBean = context.getBean(Clock.class);
-        Assertions.assertNotEquals(firstBean.getTime().getNano(), secondBean.getTime().getNano());
-        // Assertions.assertNotEquals(secondBean.getTime().getNano(),thirdBean.getTime().getNano()); - this one is equal for some reason
-        Assertions.assertNotEquals(firstBean.getTime().getNano(), thirdBean.getTime().getNano());
+        System.out.println(firstBean+ " " + secondBean + " " + thirdBean);
+        Assertions.assertNotEquals(firstBean.getTime(), secondBean.getTime());
+        Assertions.assertNotEquals(secondBean.getTime(),thirdBean.getTime());
+        Assertions.assertNotEquals(firstBean.getTime(), thirdBean.getTime());
     }
 
 }

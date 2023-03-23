@@ -29,7 +29,7 @@ class BookControllerTestNoHTTP {
     }
 
     @Test
-            void shouldAddBooks() {
+    void shouldAddBooks() {
         //given
         BookService bookServiceMock = Mockito.mock(BookService.class);
         BookController bookController = new BookController(bookServiceMock);
@@ -40,4 +40,4 @@ class BookControllerTestNoHTTP {
         //when
         BookDto book1 = bookServiceMock.addBook(bookDto1);
     }
-}*/
+} */
