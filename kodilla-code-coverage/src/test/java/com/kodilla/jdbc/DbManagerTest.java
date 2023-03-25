@@ -95,7 +95,6 @@ class DbManagerTest {
 
     @Test
     public void testSelectUsersAndPosts() throws SQLException {
-        //give
         String sqlQuery = "select users.ID, users.FIRSTNAME, users.LASTNAME, count(*) AS NUMBER_OF_POSTS from users Join posts on users.id = posts.user_id group by posts.user_id having count(*) > 1";
         Statement statement = createStatement();
         ResultSet rs = statement.executeQuery(sqlQuery);
