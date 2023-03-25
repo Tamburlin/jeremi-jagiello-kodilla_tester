@@ -15,4 +15,5 @@ include 'kodilla-selenium'
 include 'kodilla-cucumber'
 include 'kodilla-cucumber-homework14-2'
 include 'kodilla-login-selenium'
+include 'kodilla-code-coverage'
 

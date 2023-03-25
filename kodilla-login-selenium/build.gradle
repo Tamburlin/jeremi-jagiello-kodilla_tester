@@ -11,9 +11,13 @@ repositories {
 
 dependencies {
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation(group: 'com.github.lewka', name: 'ocular', version: '1.0.5') {
+        exclude group: "net.sf", module: "jargs"
+    }
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.4.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.2'
+
 }
 
 test {
